@@ -1,4 +1,4 @@
-Testing framework for PetStore API
+Testing framework for TeamCity API
 ----
 
 #####Necessary Set-Up
@@ -6,6 +6,8 @@ Testing framework for PetStore API
 2) maven version 3.5.2 or higher
 3) Ensure that maven has access to central maven repo or
 check that your artifactory contains all necessary artifacts
+4) TeamCity server started
+5) TeamCity agent started 
 
 
 #####Short framework description 

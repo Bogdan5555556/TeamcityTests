@@ -3,6 +3,8 @@ package com.apitest;
 import com.apitest.config.AppConfig;
 import com.apitest.dataModel.Project;
 import com.apitest.dataModel.Project.ParentProject;
+import io.qameta.allure.Attachment;
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -28,6 +30,8 @@ public class ProjectTest extends BaseTCAPITest{
         assertThat("Response body doesn't have incorrect project name", response.getBody().getName(), equalTo(project.getName()));
     }
 
+    @Step("Prepare base project")
+    @Attachment(value = "Project body", type = "text/json")
     private Project createBaseProjectUnderRoot(){
         ParentProject parentProject = new ParentProject(ROOT);
         return Project.builder()

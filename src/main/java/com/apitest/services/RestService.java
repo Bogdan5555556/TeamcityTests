@@ -1,5 +1,6 @@
 package com.apitest.services;
 
+import io.qameta.allure.Step;
 import lombok.SneakyThrows;
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,11 +24,13 @@ public class RestService<T> {
     @Autowired
     RestTemplate restTemplate;
 
+    @Step("Send GET request")
     public ResponseEntity<T> getForObject(String baseUrl, HttpHeaders headers, Class clazz, String endpoint) {
         URI uri = buildUrl(baseUrl, endpoint);
         return getForObject(uri, headers, clazz);
     }
 
+    @Step("Send GET request")
     public ResponseEntity<T> getForObject(String baseUrl, HttpHeaders headers, Class clazz, String... endpoints) {
         URI uri = buildUrl(baseUrl, endpoints);
         return getForObject(uri, headers, clazz);
@@ -52,6 +55,7 @@ public class RestService<T> {
         return sendRequest(uri, headers, clazz, HttpMethod.GET);
     }
 
+    @Step("Send POST request")
     public ResponseEntity<T> postForObject(String baseUrl, HttpHeaders headers, Object dataObject, Class clazz, String... endpoints) {
         return sendRequest(baseUrl, headers, dataObject, clazz, HttpMethod.POST, endpoints);
     }
