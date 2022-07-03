@@ -1,0 +1,9 @@
+endpoints:
+  root: http://localhost:8111/app/rest
+  agents:
+    getAllAgents: agents
+    deleteAgent: agents/{agentLocator}
+  project:
+    getAllProjects: projects
+    addProject: projects
+    deleteProject: projects/{projectLocator}
