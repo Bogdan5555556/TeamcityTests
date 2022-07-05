@@ -30,5 +30,6 @@ cause much more suitable for customisation.
 - Tests were chose based on decision-making process and tests check list described in CRIT_TESTS.md
 
 #####How to run and collect report
+ - fill src\main\resources\config.properties with your security token
  - to run test - execute at terminal _mvn clean install allure:report_
  - to open Allure report - find it at APITest/target/site/allure-maven-plugin/index.html and open at eny browser 
